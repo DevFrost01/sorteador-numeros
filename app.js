@@ -7,10 +7,11 @@ function sortear() {
     let sorteados = [];
     let numero;
 
-    if (de > ate) {
+    if (de >= ate) {
         alert('!!O número mínimo é maior que o número máximo, digite um valor válido.!!');
         alterarStatusBotao();
-    } else {
+        return;
+    } 
 
     for (let i = 0; i < quantidade; i++) {
         numero = obterNumeroAleatorio(de, ate);
@@ -25,7 +26,6 @@ function sortear() {
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
     alterarStatusBotao();
-    }
 }
 
 function obterNumeroAleatorio(min, max) {
